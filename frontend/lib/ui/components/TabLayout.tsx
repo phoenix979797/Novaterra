@@ -146,17 +146,10 @@ export default function TabLayout(props: any) {
           style={styles.tabbarHomeButton}
           onPress={() => navigation.navigate("(tabs)", { screen: "index" })}
         >
-          {props.route === "dashboard" ? (
-            <Image
-              source={require("@/assets/svgs/tabbar-home-opened.svg")}
-              style={styles.tabbarHomeButtonPolygon}
-            />
-          ) : (
-            <Image
-              source={require("@/assets/svgs/tabbar-home-closed.svg")}
-              style={styles.tabbarHomeButtonPolygon}
-            />
-          )}
+          <Image
+            source={require("@/assets/svgs/tabbar-home-back.svg")}
+            style={styles.tabbarHomeButtonPolygon}
+          />
           <Image
             source={require("@/assets/images/home.png")}
             style={styles.tabbarHomeIcon}
