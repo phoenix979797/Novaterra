@@ -1,15 +1,19 @@
-<svg viewBox="0 0 375 109" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 375 94"
+  fill="none"
+>
   <path
-    d="M-12.1055 0.697754L173.198 103.569C183.763 109.435 196.608 109.435 207.174 103.569L392.477 0.697754"
-    stroke="url(#paint0_linear_2037_426)"
+    d="M-12 1L174.977 89.8602C184.483 94.3779 195.517 94.3779 205.023 89.8602L392 1"
+    stroke="url(#paint0_linear_2351_9989)"
   />
   <defs>
     <linearGradient
-      id="paint0_linear_2037_426"
-      x1="190.186"
-      y1="113"
-      x2="190.186"
-      y2="0.697754"
+      id="paint0_linear_2351_9989"
+      x1="190"
+      y1="97"
+      x2="190"
+      y2="1"
       gradientUnits="userSpaceOnUse"
     >
       <stop stop-color="white" />

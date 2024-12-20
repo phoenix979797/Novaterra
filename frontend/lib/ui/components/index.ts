@@ -1,9 +1,3 @@
-/**
- * Components
- */
-
-import Background from "@/lib/ui/components/Background";
-import TabBar from "@/lib/ui/components/TabBar";
-import Header from "@/lib/ui/components/Header";
-
-export { Background, TabBar, Header };
+export { default as Background } from "./Background";
+export { default as TabLayout } from "./TabLayout";
+export { default as StackHeader } from "./StackHeader";

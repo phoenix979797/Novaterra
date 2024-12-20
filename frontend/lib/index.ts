@@ -1,7 +1,3 @@
-/**
- * App lib
- */
-
-export * from "@/lib/locales";
-export * from "@/lib/ui";
-export * from "@/lib/utils";
+export * from "./utils";
+export * from "./ui";
+export * from "./types";

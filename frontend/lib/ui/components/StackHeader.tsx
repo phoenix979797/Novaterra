@@ -1,11 +1,10 @@
 import React, { useMemo } from "react";
 import { Image } from "expo-image";
-import { StyleSheet } from "react-native";
-import { View } from "react-native";
-import { calculateHeight, calculateWidth, useResize } from "@/lib";
+import { StyleSheet, View, useWindowDimensions } from "react-native";
+import { calculateWidth } from "@/lib";
 
-const Header = (props: any) => {
-  const { width, height } = useResize();
+export default function StackHeader(props: any) {
+  const { width, height } = useWindowDimensions();
   const styles = useMemo(() => {
     return StyleSheet.create({
       header: {
@@ -60,6 +59,4 @@ const Header = (props: any) => {
       />
     </View>
   );
-};
-
-export default Header;
+}
