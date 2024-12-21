@@ -1,14 +1,21 @@
 import React, { useMemo } from "react";
-import { View, Text, StyleSheet, Image, ScrollView } from "react-native";
-import { calculateWidth, useResize } from "@/lib";
-import { AntDesign, Feather } from "@expo/vector-icons";
+import {
+  View,
+  Text,
+  StyleSheet,
+  Image,
+  ScrollView,
+  useWindowDimensions,
+} from "react-native";
+import { calculateWidth, Linear } from "@/lib";
+import { AntDesign } from "@expo/vector-icons";
 
 export default function Profile() {
-  const { width, height } = useResize();
+  const { width, height } = useWindowDimensions();
   const styles = useMemo(() => {
     return StyleSheet.create({
       profile: {
-        marginBottom: 140,
+        marginBottom: 110,
       },
       header: {
         marginTop: calculateWidth(width, 44),
@@ -157,11 +164,9 @@ export default function Profile() {
           <Text style={styles.fullnameText}>Alexander Holmes</Text>
           <Text style={styles.emailText}>usersmailaddress@gmail.com</Text>
         </View>
-        <Image
-          source={require("@/assets/svgs/dashboard-linear.svg")}
-          style={styles.balanceGradient}
-          resizeMode="contain"
-        />
+        <View style={styles.balanceGradient}>
+          <Linear />
+        </View>
       </View>
       <View style={styles.settings}>
         <View style={styles.settingTab}>

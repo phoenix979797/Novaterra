@@ -1,62 +1,39 @@
-import React, { useMemo } from "react";
-import { Image } from "expo-image";
-import { StyleSheet, View, useWindowDimensions } from "react-native";
-import { calculateWidth } from "@/lib";
+import { getHeaderTitle } from "@react-navigation/elements";
+import { NativeStackHeaderProps } from "@react-navigation/native-stack";
+import React from "react";
+import { Appbar, AppbarProps } from "react-native-paper";
 
-export default function StackHeader(props: any) {
-  const { width, height } = useWindowDimensions();
-  const styles = useMemo(() => {
-    return StyleSheet.create({
-      header: {
-        display: "flex",
-        flexDirection: "row",
-        justifyContent: "space-between",
-        alignItems: "center",
-        position: "absolute",
-        width: "100%",
-        height: calculateWidth(width, 46),
-        top: calculateWidth(width, 25.5),
-        paddingHorizontal: calculateWidth(width, 20),
-      },
-      menuDots: {
-        display: "flex",
-        alignItems: "flex-start",
-        alignContent: "flex-start",
-        padding: 0,
-        flexDirection: "row",
-        flexShrink: 0,
-        flexWrap: "wrap",
-        width: calculateWidth(width, 24),
-        height: calculateWidth(width, 24),
-        gap: calculateWidth(width, 12),
-      },
-      dot: {
-        width: calculateWidth(width, 6),
-        height: calculateWidth(width, 6),
-        backgroundColor: "white",
-        borderRadius: calculateWidth(width, 6),
-        flexShrink: 0,
-      },
-      logo: {
-        width: calculateWidth(width, 46),
-        height: calculateWidth(width, 46),
-      },
-    });
-  }, [width, height]);
-
-  return (
-    <View style={styles.header}>
-      <View style={styles.menuDots}>
-        <View style={styles.dot} />
-        <View style={styles.dot} />
-        <View style={styles.dot} />
-        <View style={styles.dot} />
-      </View>
-      <Image
-        source={require("@/assets/svgs/logo.svg")}
-        style={styles.logo}
-        contentFit="contain"
-      />
-    </View>
-  );
+interface StackHeaderProps extends AppbarProps {
+  navProps: NativeStackHeaderProps;
 }
+
+const StackHeader = (props: StackHeaderProps) => {
+  return (
+    <Appbar.Header {...props}>
+      {props.navProps.options.headerLeft
+        ? props.navProps.options.headerLeft({
+            canGoBack: props.navProps.navigation.canGoBack(),
+          })
+        : undefined}
+
+      {props.navProps.back ? (
+        <Appbar.BackAction onPress={props.navProps.navigation.goBack} />
+      ) : null}
+
+      <Appbar.Content
+        title={getHeaderTitle(
+          props.navProps.options,
+          props.navProps.route.name
+        )}
+      />
+
+      {props.navProps.options.headerRight
+        ? props.navProps.options.headerRight({
+            canGoBack: props.navProps.navigation.canGoBack(),
+          })
+        : undefined}
+    </Appbar.Header>
+  );
+};
+
+export default StackHeader;

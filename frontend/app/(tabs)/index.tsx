@@ -8,7 +8,16 @@ import {
   useWindowDimensions,
 } from "react-native";
 import { ImageBackground } from "expo-image";
-import { calculateWidth } from "@/lib";
+import {
+  calculateWidth,
+  FriendCard,
+  FriendIcon,
+  Linear,
+  MarketCard,
+  MarketIcon,
+  PromotionCard,
+  PromotionIcon,
+} from "@/lib";
 
 export default function Dashboard() {
   const { width, height } = useWindowDimensions();
@@ -193,62 +202,45 @@ export default function Dashboard() {
         <Text style={styles.balanceUSD}>
           $<Text style={styles.balanceUSDAmount}>129.343,24 USD</Text>
         </Text>
-        <Image
-          source={require("@/assets/svgs/dashboard-linear.svg")}
-          style={styles.balanceGradient}
-          resizeMode="contain"
-        />
+        <View style={styles.balanceGradient}>
+          <Linear />
+        </View>
       </View>
       <View style={styles.cardsContainer}>
         <View style={styles.topContainer}>
-          <ImageBackground
-            source={require("@/assets/svgs/dashboard-market-card.svg")}
-            style={styles.marketCard}
-            contentFit="contain"
-          >
-            <Image
-              source={require("@/assets/svgs/market.svg")}
-              style={styles.cardIcon}
-              resizeMode="contain"
-            />
+          <View style={styles.marketCard}>
+            <MarketCard style={{ position: "absolute" }} />
+            <View style={styles.cardIcon}>
+              <MarketIcon />
+            </View>
             <Text style={styles.cardTitle}>Explore the Secondary Market</Text>
             <Text style={styles.cardDescription}>
               Stay ahead by exploring real-time token prices and making informed
               trades effortlessly
             </Text>
-          </ImageBackground>
-          <ImageBackground
-            source={require("@/assets/svgs/dashboard-promotion-card.svg")}
-            style={styles.promotionCard}
-            contentFit="contain"
-          >
-            <Image
-              source={require("@/assets/svgs/promotion.svg")}
-              style={styles.cardIcon}
-              resizeMode="contain"
-            />
+          </View>
+          <View style={styles.promotionCard}>
+            <PromotionCard style={{ position: "absolute" }} />
+            <View style={styles.cardIcon}>
+              <PromotionIcon />
+            </View>
             <Text style={styles.cardTitle}>Your Upcoming Promotions</Text>
             <Text style={styles.cardDescription}>
               Don't miss out on exclusive offers, check out what's next and
               start earning rewards
             </Text>
-          </ImageBackground>
+          </View>
         </View>
-        <ImageBackground
-          source={require("@/assets/svgs/dashboard-friend-card.svg")}
-          style={styles.friendCard}
-          contentFit="contain"
-        >
-          <Image
-            source={require("@/assets/svgs/friend.svg")}
-            style={styles.cardFriendIcon}
-            resizeMode="contain"
-          />
+        <View style={styles.friendCard}>
+          <FriendCard style={{ position: "absolute" }} />
+          <View style={styles.cardFriendIcon}>
+            <FriendIcon />
+          </View>
           <Text style={styles.cardTitle}>Refer a Friend</Text>
           <Text style={styles.cardFriendDescription}>
             Boost your ROI by 1% for every friend you bring!
           </Text>
-        </ImageBackground>
+        </View>
       </View>
     </ScrollView>
   );

@@ -121,10 +121,15 @@ const RootLayoutNav = () => {
         <Stack
           screenOptions={{
             animation: "slide_from_bottom",
-            // header: () => <StackHeader />,
+            header: (props) => (
+              <StackHeader navProps={props} children={undefined} />
+            ),
           }}
         >
-          <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+          <Stack.Screen
+            name="(tabs)"
+            options={{ headerShown: false, animation: "slide_from_bottom" }}
+          />
         </Stack>
       </ImageBackground>
     </ThemeProvider>

@@ -1,18 +1,16 @@
 import React, { useMemo } from "react";
 import { Image } from "expo-image";
 import {
-  ImageBackground,
   StyleSheet,
   TouchableOpacity,
   View,
   useWindowDimensions,
 } from "react-native";
-import { calculateHeight, calculateWidth } from "@/lib";
+import { calculateHeight, calculateWidth } from "../../utils";
+import { HomeIconColor, HomeIconGray, Logo } from "../svgs";
 import { Feather } from "@expo/vector-icons";
-import { useNavigation } from "@react-navigation/native";
 
 export default function TabLayout(props: any) {
-  const navigation = useNavigation();
   const { width, height } = useWindowDimensions();
   const styles = useMemo(() => {
     return StyleSheet.create({
@@ -60,7 +58,7 @@ export default function TabLayout(props: any) {
       },
       tabbarContainer: {
         position: "absolute",
-        bottom: calculateWidth(width, 26),
+        bottom: calculateWidth(width, 24),
         left: calculateWidth(width, 16),
         right: calculateWidth(width, 16),
         justifyContent: "space-between",
@@ -69,32 +67,23 @@ export default function TabLayout(props: any) {
         display: "flex",
       },
       tabbarHomeButton: {
-        width: calculateWidth(width, 60),
-        height: calculateWidth(width, 60),
+        display: "flex",
+        width: calculateWidth(width, 59),
+        height: calculateWidth(width, 59),
+        padding: calculateWidth(width, 3),
+        justifyContent: "center",
+        alignItems: "center",
+        gap: calculateWidth(width, 10),
         flexShrink: 0,
       },
       tabbarHomeIcon: {
         width: calculateWidth(width, 39),
         height: calculateWidth(width, 39),
-        position: "absolute",
-        flexShrink: 0,
-        left: "50%",
-        top: "50%",
-        transform: "translate(-50%, -50%)",
-      },
-      tabbarHomeButtonPolygon: {
-        width: calculateWidth(width, 52),
-        height: calculateWidth(width, 58),
-        flexShrink: 0,
-        position: "absolute",
-        left: "50%",
-        top: "50%",
-        transform: "translate(-50%, -50%)",
       },
       tabbarButton: {
         display: "flex",
-        width: calculateWidth(width, 55),
-        height: calculateWidth(width, 55),
+        width: calculateWidth(width, 59),
+        height: calculateWidth(width, 59),
         padding: calculateWidth(width, 3),
         justifyContent: "center",
         alignItems: "center",
@@ -103,13 +92,53 @@ export default function TabLayout(props: any) {
       },
       tabbarBackground: {
         width: calculateWidth(width, 375),
-        height: calculateHeight(height, 219),
+        height: calculateHeight(height, 242),
         flex: 1,
         position: "absolute",
         bottom: 0,
       },
     });
   }, [width, height]);
+
+  const tabs = [
+    <TouchableOpacity
+      style={styles.tabbarButton}
+      onPress={() => props.navProps.navigation.replace("discover")}
+      key="discover"
+    >
+      <Feather
+        name="globe"
+        size={calculateWidth(width, 24)}
+        color={props.navProps.route.name === "discover" ? "white" : "gray"}
+      />
+    </TouchableOpacity>,
+    <TouchableOpacity
+      style={styles.tabbarHomeButton}
+      onPress={() => props.navProps.navigation.replace("index")}
+      key="index"
+    >
+      {props.navProps.route.name === "index" ? (
+        <View style={styles.tabbarHomeIcon}>
+          <HomeIconColor />
+        </View>
+      ) : (
+        <View style={styles.tabbarHomeIcon}>
+          <HomeIconGray />
+        </View>
+      )}
+    </TouchableOpacity>,
+    <TouchableOpacity
+      style={styles.tabbarButton}
+      onPress={() => props.navProps.navigation.replace("profile")}
+      key="profile"
+    >
+      <Feather
+        name="user"
+        size={calculateWidth(width, 24)}
+        color={props.navProps.route.name === "profile" ? "white" : "gray"}
+      />
+    </TouchableOpacity>,
+  ];
 
   return (
     <View style={styles.layout}>
@@ -125,46 +154,16 @@ export default function TabLayout(props: any) {
           <View style={styles.dot} />
           <View style={styles.dot} />
         </View>
-        <Image
-          source={require("@/assets/svgs/logo.svg")}
-          style={styles.logo}
-          contentFit="contain"
-        />
+        <View style={styles.logo}>
+          <Logo />
+        </View>
       </View>
       <View style={styles.tabbarContainer}>
-        <TouchableOpacity
-          style={styles.tabbarButton}
-          onPress={() => navigation.navigate("(tabs)", { screen: "discover" })}
-        >
-          <Feather
-            name="globe"
-            size={calculateWidth(width, 24)}
-            color={props.route === "discover" ? "white" : "gray"}
-          />
-        </TouchableOpacity>
-        <TouchableOpacity
-          style={styles.tabbarHomeButton}
-          onPress={() => navigation.navigate("(tabs)", { screen: "index" })}
-        >
-          <Image
-            source={require("@/assets/svgs/tabbar-home-back.svg")}
-            style={styles.tabbarHomeButtonPolygon}
-          />
-          <Image
-            source={require("@/assets/images/home.png")}
-            style={styles.tabbarHomeIcon}
-          />
-        </TouchableOpacity>
-        <TouchableOpacity
-          style={styles.tabbarButton}
-          onPress={() => navigation.navigate("(tabs)", { screen: "profile" })}
-        >
-          <Feather
-            name="user"
-            size={calculateWidth(width, 24)}
-            color={props.route === "profile" ? "white" : "gray"}
-          />
-        </TouchableOpacity>
+        {props.navProps.route.name === "index"
+          ? tabs
+          : props.navProps.route.name === "discover"
+          ? [tabs[1], tabs[0], tabs[2]]
+          : [tabs[0], tabs[2], tabs[1]]}
       </View>
     </View>
   );
