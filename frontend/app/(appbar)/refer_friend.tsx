@@ -10,9 +10,9 @@ import {
   TextInput,
 } from "react-native";
 import { calculateWidth, Divider } from "@/lib";
-import { AntDesign } from "@expo/vector-icons";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
 
-export default function PrivacySettings() {
+export default function ReferFriend() {
   const { width, height } = useWindowDimensions();
   const styles = useMemo(() => {
     return StyleSheet.create({
@@ -135,82 +135,28 @@ export default function PrivacySettings() {
   return (
     <ScrollView>
       <Text style={styles.description}>
-        Manage your account's security, notifications to tailor your experience
-        and protect your privacy
+        Share your unique referral link and get rewarded when your friends join.
       </Text>
       <View style={styles.divider}>
         <Divider />
       </View>
       <View style={styles.settingItem}>
-        <Text style={styles.settingTitle}>Security Setting</Text>
-        <View style={styles.settingList}>
-          <View style={styles.switch}>
-            <Switch
-              thumbColor="#ffffff"
-              trackColor={{ false: "#000", true: "#732CB7" }}
-              value={true}
-            />
-            <Text style={styles.switchLabel}>
-              Notify me about suspicious logins
-            </Text>
-          </View>
-          <View style={styles.switch}>
-            <Switch
-              thumbColor="#ffffff"
-              trackColor={{ false: "#000", true: "#732CB7" }}
-              value={false}
-            />
-            <Text style={styles.switchLabel}>
-              Two-Factor Authentication (2FA)
-            </Text>
-          </View>
-        </View>
-      </View>
-      <View style={styles.settingItem}>
-        <Text style={styles.settingTitle}>Notification preferences</Text>
-        <View style={styles.settingList}>
-          <View style={styles.switch}>
-            <Switch
-              thumbColor="#ffffff"
-              trackColor={{ false: "#000", true: "#732CB7" }}
-              value={true}
-            />
-            <View>
-              <Text style={styles.switchLabel}>Allow push notifications</Text>
-              <Text style={styles.switchSubLabel}>
-                Allow push notifications
-              </Text>
-            </View>
-          </View>
-          <View style={styles.switch}>
-            <Switch
-              thumbColor="#ffffff"
-              trackColor={{ false: "#000", true: "#732CB7" }}
-              value={false}
-            />
-            <View>
-              <Text style={styles.switchLabel}>SMS Alerts</Text>
-              <Text style={styles.switchSubLabel}>
-                Receive alerts via SMS for important updates
-              </Text>
-            </View>
-          </View>
-        </View>
-      </View>
-      <View style={styles.settingItem}>
-        <Text style={styles.settingTitle}>Password</Text>
         <View style={styles.input}>
-          <Text style={styles.inputLabel}>EmailAddress</Text>
-          <TextInput
-            style={styles.inputField}
-            value="usersmailaddress@gmail.com"
-            secureTextEntry
-          />
+          <Text style={styles.inputLabel}>Your unique code</Text>
+          <TextInput style={styles.inputField} value="12345" secureTextEntry />
+        </View>
+        <View style={styles.input}>
+          <Text style={styles.inputLabel}>Your referral link</Text>
+          <TextInput style={styles.inputField} value="Link tex" />
         </View>
       </View>
       <View style={styles.formButton}>
-        <AntDesign name="edit" size={calculateWidth(width, 20)} color="white" />
-        <Text style={styles.buttonLabel}>Edit personal data</Text>
+        <MaterialCommunityIcons
+          name="share"
+          size={calculateWidth(width, 20)}
+          color="white"
+        />
+        <Text style={styles.buttonLabel}>Share Link</Text>
       </View>
     </ScrollView>
   );

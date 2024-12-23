@@ -14,6 +14,7 @@ export default function AppBarLayout() {
         name="privacy_settings"
         options={{ title: "Privacy Settings" }}
       />
+      <Stack.Screen name="refer_friend" options={{ title: "Refer a Friend" }} />
     </Stack>
   );
 }

@@ -190,15 +190,17 @@ export default function Profile() {
             />
             <Text style={styles.settingTabText}>Privacy Settings</Text>
           </View>
+        </TouchableOpacity>{" "}
+        <TouchableOpacity onPress={() => router.push("/(appbar)/refer_friend")}>
+          <View style={styles.settingTab}>
+            <Image
+              source={require("@/assets/images/emoticons/persons.png")}
+              style={styles.settingTabIcon}
+              resizeMode="contain"
+            />
+            <Text style={styles.settingTabText}>Refer a Friend</Text>
+          </View>
         </TouchableOpacity>
-        <View style={styles.settingTab}>
-          <Image
-            source={require("@/assets/images/emoticons/persons.png")}
-            style={styles.settingTabIcon}
-            resizeMode="contain"
-          />
-          <Text style={styles.settingTabText}>Refer a Friend</Text>
-        </View>
         <View style={styles.settingTab}>
           <Image
             source={require("@/assets/images/emoticons/money-bag.png")}
