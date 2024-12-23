@@ -7,7 +7,6 @@ import {
   ScrollView,
   useWindowDimensions,
 } from "react-native";
-import { ImageBackground } from "expo-image";
 import {
   calculateWidth,
   FriendCard,
@@ -100,8 +99,6 @@ export default function Dashboard() {
         flexShrink: 0,
         position: "absolute",
         bottom: calculateWidth(width, -49),
-        left: "50%",
-        transform: "translate(-50%, 0%)",
       },
       cardsContainer: {
         width: "100%",

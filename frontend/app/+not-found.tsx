@@ -1,6 +1,6 @@
 import { View, StyleSheet } from "react-native";
 import { Link, Stack } from "expo-router";
-import { TabBar, Background } from "@/lib/ui/components";
+import { Background } from "@/lib/ui/components";
 
 export default function NotFoundScreen() {
   return (
@@ -11,7 +11,6 @@ export default function NotFoundScreen() {
           Go back to Home screen!
         </Link>
       </View>
-      <TabBar route="dashboard" />
     </Background>
   );
 }

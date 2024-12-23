@@ -22,10 +22,10 @@ import {
 import { SplashScreen, Stack } from "expo-router";
 import * as SecureStore from "expo-secure-store";
 import React from "react";
-import { ImageBackground, Platform } from "react-native";
+import { ImageBackground, Platform, StatusBar } from "react-native";
 import { DefaultTheme, ThemeProvider } from "@react-navigation/native";
 
-import { Setting, StackHeader } from "@/lib";
+import { Setting } from "@/lib";
 
 // Catch any errors thrown by the Layout component.
 export { ErrorBoundary } from "expo-router";
@@ -108,6 +108,11 @@ const RootLayoutNav = () => {
         },
       }}
     >
+      <StatusBar
+        translucent
+        backgroundColor="transparent"
+        barStyle="light-content"
+      />
       <ImageBackground
         source={require("@/assets/images/background.png")}
         resizeMode="stretch"
@@ -118,17 +123,14 @@ const RootLayoutNav = () => {
           justifyContent: "center",
         }}
       >
-        <Stack
-          screenOptions={{
-            animation: "slide_from_bottom",
-            header: (props) => (
-              <StackHeader navProps={props} children={undefined} />
-            ),
-          }}
-        >
+        <Stack>
           <Stack.Screen
             name="(tabs)"
             options={{ headerShown: false, animation: "slide_from_bottom" }}
+          />
+          <Stack.Screen
+            name="(appbar)"
+            options={{ headerShown: false, animation: "slide_from_right" }}
           />
         </Stack>
       </ImageBackground>

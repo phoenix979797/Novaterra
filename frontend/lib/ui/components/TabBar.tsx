@@ -10,7 +10,7 @@ import { calculateHeight, calculateWidth } from "../../utils";
 import { HomeIconColor, HomeIconGray, Logo } from "../svgs";
 import { Feather } from "@expo/vector-icons";
 
-export default function TabLayout(props: any) {
+export default function TabBar(props: any) {
   const { width, height } = useWindowDimensions();
   const styles = useMemo(() => {
     return StyleSheet.create({

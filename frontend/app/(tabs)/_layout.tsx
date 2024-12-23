@@ -1,12 +1,12 @@
-import { TabLayout } from "@/lib/ui";
+import { TabBar } from "@/lib/ui";
 import { Stack } from "expo-router";
 
-export default function Layout() {
+export default function TabsLayout() {
   return (
     <Stack
       screenOptions={{
-        animation: "fade",
-        header: (props) => <TabLayout navProps={props} children={undefined} />,
+        animation: "flip",
+        header: (props) => <TabBar navProps={props} children={undefined} />,
       }}
     >
       <Stack.Screen name="index" />

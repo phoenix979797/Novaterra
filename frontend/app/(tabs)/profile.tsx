@@ -6,9 +6,11 @@ import {
   Image,
   ScrollView,
   useWindowDimensions,
+  TouchableOpacity,
 } from "react-native";
 import { calculateWidth, Linear } from "@/lib";
 import { AntDesign } from "@expo/vector-icons";
+import { router } from "expo-router";
 
 export default function Profile() {
   const { width, height } = useWindowDimensions();
@@ -99,8 +101,6 @@ export default function Profile() {
         flexShrink: 0,
         position: "absolute",
         bottom: calculateWidth(width, -60),
-        left: "50%",
-        transform: "translate(-50%, 0%)",
       },
       settings: {
         display: "flex",
@@ -169,14 +169,16 @@ export default function Profile() {
         </View>
       </View>
       <View style={styles.settings}>
-        <View style={styles.settingTab}>
-          <Image
-            source={require("@/assets/images/emoticons/cabinet.png")}
-            style={styles.settingTabIcon}
-            resizeMode="contain"
-          />
-          <Text style={styles.settingTabText}>Personal Data</Text>
-        </View>
+        <TouchableOpacity onPress={() => router.push("/(appbar)/profile_data")}>
+          <View style={styles.settingTab}>
+            <Image
+              source={require("@/assets/images/emoticons/cabinet.png")}
+              style={styles.settingTabIcon}
+              resizeMode="contain"
+            />
+            <Text style={styles.settingTabText}>Personal Data</Text>
+          </View>
+        </TouchableOpacity>
         <View style={styles.settingTab}>
           <Image
             source={require("@/assets/images/emoticons/locked.png")}
