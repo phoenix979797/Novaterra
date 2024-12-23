@@ -15,6 +15,14 @@ export default function AppBarLayout() {
         options={{ title: "Privacy Settings" }}
       />
       <Stack.Screen name="refer_friend" options={{ title: "Refer a Friend" }} />
+      <Stack.Screen
+        name="transaction_history"
+        options={{ title: "Transaction History" }}
+      />
+      <Stack.Screen
+        name="newsletter_subscription"
+        options={{ title: "Newletter Subscription" }}
+      />
     </Stack>
   );
 }

@@ -1,12 +1,10 @@
 import React, { useMemo } from "react";
 import {
   View,
-  Image,
   Text,
   StyleSheet,
   ScrollView,
   useWindowDimensions,
-  Switch,
   TextInput,
 } from "react-native";
 import { calculateWidth, Divider } from "@/lib";

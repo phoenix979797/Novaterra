@@ -209,14 +209,18 @@ export default function Profile() {
           />
           <Text style={styles.settingTabText}>My Investment</Text>
         </View>
-        <View style={styles.settingTab}>
-          <Image
-            source={require("@/assets/images/emoticons/page.png")}
-            style={styles.settingTabIcon}
-            resizeMode="contain"
-          />
-          <Text style={styles.settingTabText}>Transaction History</Text>
-        </View>
+        <TouchableOpacity
+          onPress={() => router.push("/(appbar)/transaction_history")}
+        >
+          <View style={styles.settingTab}>
+            <Image
+              source={require("@/assets/images/emoticons/page.png")}
+              style={styles.settingTabIcon}
+              resizeMode="contain"
+            />
+            <Text style={styles.settingTabText}>Transaction History</Text>
+          </View>
+        </TouchableOpacity>
         <View style={styles.settingTab}>
           <Image
             source={require("@/assets/images/emoticons/credit-card.png")}
@@ -225,14 +229,18 @@ export default function Profile() {
           />
           <Text style={styles.settingTabText}>Payment Methods</Text>
         </View>
-        <View style={styles.settingTab}>
-          <Image
-            source={require("@/assets/images/emoticons/envelope.png")}
-            style={styles.settingTabIcon}
-            resizeMode="contain"
-          />
-          <Text style={styles.settingTabText}>Newsletter Subscription</Text>
-        </View>
+        <TouchableOpacity
+          onPress={() => router.push("/(appbar)/newsletter_subscription")}
+        >
+          <View style={styles.settingTab}>
+            <Image
+              source={require("@/assets/images/emoticons/envelope.png")}
+              style={styles.settingTabIcon}
+              resizeMode="contain"
+            />
+            <Text style={styles.settingTabText}>Newsletter Subscription</Text>
+          </View>
+        </TouchableOpacity>
       </View>
     </ScrollView>
   );

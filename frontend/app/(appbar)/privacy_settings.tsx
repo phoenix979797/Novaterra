@@ -1,7 +1,6 @@
 import React, { useMemo } from "react";
 import {
   View,
-  Image,
   Text,
   StyleSheet,
   ScrollView,
