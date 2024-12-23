@@ -50,13 +50,13 @@ export default function ProfileData() {
         paddingHorizontal: calculateWidth(width, 16),
         flexDirection: "column",
         alignItems: "flex-start",
-        gap: 12,
+        gap: calculateWidth(width, 12),
       },
       formItem: {
         display: "flex",
         flexDirection: "column",
         alignItems: "flex-start",
-        gap: 6,
+        gap: calculateWidth(width, 6),
         alignSelf: "stretch",
       },
       itemLabel: {

@@ -179,14 +179,18 @@ export default function Profile() {
             <Text style={styles.settingTabText}>Personal Data</Text>
           </View>
         </TouchableOpacity>
-        <View style={styles.settingTab}>
-          <Image
-            source={require("@/assets/images/emoticons/locked.png")}
-            style={styles.settingTabIcon}
-            resizeMode="contain"
-          />
-          <Text style={styles.settingTabText}>Privacy Settings</Text>
-        </View>
+        <TouchableOpacity
+          onPress={() => router.push("/(appbar)/privacy_settings")}
+        >
+          <View style={styles.settingTab}>
+            <Image
+              source={require("@/assets/images/emoticons/locked.png")}
+              style={styles.settingTabIcon}
+              resizeMode="contain"
+            />
+            <Text style={styles.settingTabText}>Privacy Settings</Text>
+          </View>
+        </TouchableOpacity>
         <View style={styles.settingTab}>
           <Image
             source={require("@/assets/images/emoticons/persons.png")}

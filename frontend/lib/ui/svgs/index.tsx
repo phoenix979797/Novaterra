@@ -8,3 +8,4 @@ export { default as MarketCard } from "./MarketCard";
 export { default as MarketIcon } from "./MarketIcon";
 export { default as PromotionCard } from "./PromotionCard";
 export { default as PromotionIcon } from "./PromotionIcon";
+export { default as Divider } from "./Divider";

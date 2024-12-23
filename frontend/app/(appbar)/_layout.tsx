@@ -10,6 +10,10 @@ export default function AppBarLayout() {
       }}
     >
       <Stack.Screen name="profile_data" options={{ title: "Personal Data" }} />
+      <Stack.Screen
+        name="privacy_settings"
+        options={{ title: "Privacy Settings" }}
+      />
     </Stack>
   );
 }
