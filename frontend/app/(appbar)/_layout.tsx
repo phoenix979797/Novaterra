@@ -31,6 +31,7 @@ export default function AppBarLayout() {
         name="add_payment_method"
         options={{ title: "Add New Payment Methods" }}
       />
+      <Stack.Screen name="my_investment" options={{ title: "My Investment" }} />
     </Stack>
   );
 }

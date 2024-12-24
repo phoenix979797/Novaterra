@@ -1,16 +1,12 @@
 import React, { useMemo } from "react";
 import {
   View,
-  Image,
   Text,
   StyleSheet,
   ScrollView,
   useWindowDimensions,
-  Switch,
-  TextInput,
 } from "react-native";
 import { calculateWidth, Divider } from "@/lib";
-import { AntDesign } from "@expo/vector-icons";
 
 export default function TransactionHistory() {
   const { width, height } = useWindowDimensions();

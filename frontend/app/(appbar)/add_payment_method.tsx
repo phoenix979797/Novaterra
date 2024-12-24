@@ -6,7 +6,6 @@ import {
   ScrollView,
   useWindowDimensions,
   TextInput,
-  TouchableOpacity,
 } from "react-native";
 import { calculateWidth, Divider } from "@/lib";
 import { Feather } from "@expo/vector-icons";
