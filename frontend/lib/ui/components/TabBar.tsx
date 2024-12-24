@@ -142,11 +142,11 @@ export default function TabBar(props: any) {
 
   return (
     <View style={styles.layout}>
-      <Image
+      {/* <Image
         source={require("@/assets/images/tabbar.png")}
         style={styles.tabbarBackground}
         contentFit="fill"
-      />
+      /> */}
       <View style={styles.header}>
         <View style={styles.menuDots}>
           <View style={styles.dot} />

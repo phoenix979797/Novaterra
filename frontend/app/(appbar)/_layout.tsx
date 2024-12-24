@@ -23,6 +23,14 @@ export default function AppBarLayout() {
         name="newsletter_subscription"
         options={{ title: "Newletter Subscription" }}
       />
+      <Stack.Screen
+        name="payment_methods"
+        options={{ title: "Payment Methods" }}
+      />
+      <Stack.Screen
+        name="add_payment_method"
+        options={{ title: "Add New Payment Methods" }}
+      />
     </Stack>
   );
 }

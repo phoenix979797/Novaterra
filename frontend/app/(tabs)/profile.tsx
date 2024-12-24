@@ -221,14 +221,18 @@ export default function Profile() {
             <Text style={styles.settingTabText}>Transaction History</Text>
           </View>
         </TouchableOpacity>
-        <View style={styles.settingTab}>
-          <Image
-            source={require("@/assets/images/emoticons/credit-card.png")}
-            style={styles.settingTabIcon}
-            resizeMode="contain"
-          />
-          <Text style={styles.settingTabText}>Payment Methods</Text>
-        </View>
+        <TouchableOpacity
+          onPress={() => router.push("/(appbar)/payment_methods")}
+        >
+          <View style={styles.settingTab}>
+            <Image
+              source={require("@/assets/images/emoticons/credit-card.png")}
+              style={styles.settingTabIcon}
+              resizeMode="contain"
+            />
+            <Text style={styles.settingTabText}>Payment Methods</Text>
+          </View>
+        </TouchableOpacity>
         <TouchableOpacity
           onPress={() => router.push("/(appbar)/newsletter_subscription")}
         >
