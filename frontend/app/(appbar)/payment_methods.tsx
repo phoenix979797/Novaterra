@@ -138,7 +138,7 @@ export default function PaymentMethods() {
         <View style={styles.methodItem}>
           <View style={styles.card}>
             <Image
-              src={require("@/assets/images/emoticons/mastercard.png")}
+              source={require("@/assets/images/emoticons/mastercard.png")}
               style={styles.cardImage}
               resizeMode="contain"
             />
@@ -161,7 +161,7 @@ export default function PaymentMethods() {
         <View style={styles.methodItem}>
           <View style={styles.card}>
             <Image
-              src={require("@/assets/images/emoticons/visa.png")}
+              source={require("@/assets/images/emoticons/visa.png")}
               style={styles.cardImage}
               resizeMode="contain"
             />

@@ -7,7 +7,12 @@ import {
   useWindowDimensions,
   Image,
 } from "react-native";
-import { calculateWidth, Divider, InvestmentCard, Linear } from "@/lib";
+import {
+  calculateWidth,
+  Divider,
+  InvestmentCard,
+  InvestmentLinear,
+} from "@/lib";
 
 export default function MyInvestment() {
   const { width, height } = useWindowDimensions();
@@ -55,6 +60,7 @@ export default function MyInvestment() {
       },
       title: {
         display: "flex",
+        width: "100%",
         flexDirection: "column",
         alignItems: "center",
         gap: calculateWidth(width, 4),
@@ -137,14 +143,14 @@ export default function MyInvestment() {
     {
       title: "NT2Due",
       icon: "nt2",
-      locked: true,
+      locked: false,
       price: 50.12924,
       rol: 16,
     },
     {
       title: "NT3Tre",
       icon: "nt3",
-      locked: true,
+      locked: false,
       price: 50.12924,
       rol: 16,
     },
@@ -173,24 +179,28 @@ export default function MyInvestment() {
           <View key={item.title} style={styles.investmentCard}>
             <InvestmentCard
               style={{ position: "absolute" }}
-              color={index % 2 ? "#F5B300" : "#3FB541"}
+              color={index % 4 === 0 || index % 4 === 3 ? "#3FB541" : "#F5B300"}
             />
             <View style={styles.title}>
               <Image
-                src={`@/assets/images/emoticons/${item.icon}.png`}
+                source={{
+                  uri: `assets/?unstable_path=.%2Fassets%2Fimages%2Femoticons/${item.icon}.png`,
+                }}
                 style={styles.icon}
               />
               <View style={styles.titleMain}>
                 <Text style={styles.titleText}>{item.title}</Text>
                 <Image
-                  src={`@/assets/images/emoticons/${
-                    item.locked ? "locked" : "unlocked"
-                  }.png`}
+                  source={{
+                    uri: `assets/?unstable_path=.%2Fassets%2Fimages%2Femoticons/${
+                      item.locked ? "locked" : "unlocked"
+                    }.png`,
+                  }}
                   style={styles.lockIcon}
                 />
               </View>
               <View style={styles.titleGradient}>
-                <Linear />
+                <InvestmentLinear />
               </View>
             </View>
             <View style={styles.info}>
