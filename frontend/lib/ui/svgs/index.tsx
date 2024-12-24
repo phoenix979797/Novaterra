@@ -11,3 +11,4 @@ export { default as PromotionIcon } from "./PromotionIcon";
 export { default as Divider } from "./Divider";
 export { default as InvestmentCard } from "./InvestmentCard";
 export { default as InvestmentLinear } from "./InvestmentLinear";
+export { default as DiscoverCard } from "./DiscoverCard";
