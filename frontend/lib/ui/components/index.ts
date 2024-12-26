@@ -4,3 +4,4 @@ export { default as AppBar } from "./AppBar";
 export { default as PromotionTabBar } from "./PromotionTabBar";
 export { default as General } from "./General";
 export { default as Presentation } from "./Presentation";
+export { default as FinancialStatement } from "./FinancialStatement";
