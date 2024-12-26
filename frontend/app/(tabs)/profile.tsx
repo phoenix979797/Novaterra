@@ -190,7 +190,7 @@ export default function Profile() {
             />
             <Text style={styles.settingTabText}>Privacy Settings</Text>
           </View>
-        </TouchableOpacity>{" "}
+        </TouchableOpacity>
         <TouchableOpacity onPress={() => router.push("/(appbar)/refer_friend")}>
           <View style={styles.settingTab}>
             <Image

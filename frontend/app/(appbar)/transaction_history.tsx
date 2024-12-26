@@ -142,7 +142,7 @@ export default function TransactionHistory() {
   const transactions = [
     {
       id: 1,
-      icon: "ethereum-badge",
+      icon: require("@/assets/images/emoticons/ethereum-badge.png"),
       title: "Withdrawal",
       date: "Dec 15, 2024, 09:12 AM",
       price: "CHF 80K",
@@ -150,7 +150,7 @@ export default function TransactionHistory() {
     },
     {
       id: 2,
-      icon: "bitcoin-badge",
+      icon: require("@/assets/images/emoticons/bitcoin-badge.png"),
       title: "Deposit",
       date: "Dec 15, 2024, 09:12 AM",
       price: "CHF 120K",
@@ -158,7 +158,7 @@ export default function TransactionHistory() {
     },
     {
       id: 3,
-      icon: "cardano-badge",
+      icon: require("@/assets/images/emoticons/cardano-badge.png"),
       title: "Transfer",
       date: "Dec 15, 2024, 09:12 AM",
       price: "CHF 40K",
@@ -166,7 +166,7 @@ export default function TransactionHistory() {
     },
     {
       id: 4,
-      icon: "tether-badge",
+      icon: require("@/assets/images/emoticons/tether-badge.png"),
       title: "Exchange (USDT → BTC)",
       date: "Dec 15, 2024, 09:12 AM",
       price: "CHF 110K",
@@ -174,7 +174,7 @@ export default function TransactionHistory() {
     },
     {
       id: 5,
-      icon: "bitcoin-badge",
+      icon: require("@/assets/images/emoticons/bitcoin-badge.png"),
       title: "Deposit",
       date: "Dec 15, 2024, 09:12 AM",
       price: "CHF 550K",
@@ -182,7 +182,7 @@ export default function TransactionHistory() {
     },
     {
       id: 6,
-      icon: "bitcoin-badge",
+      icon: require("@/assets/images/emoticons/bitcoin-badge.png"),
       title: "Deposit",
       date: "Dec 15, 2024, 09:12 AM",
       price: "CHF 70K",
@@ -190,7 +190,7 @@ export default function TransactionHistory() {
     },
     {
       id: 7,
-      icon: "cardano-badge",
+      icon: require("@/assets/images/emoticons/cardano-badge.png"),
       title: "Transfer",
       date: "Dec 15, 2024, 09:12 AM",
       price: "CHF 90K",
@@ -198,7 +198,7 @@ export default function TransactionHistory() {
     },
     {
       id: 8,
-      icon: "ethereum-badge",
+      icon: require("@/assets/images/emoticons/ethereum-badge.png"),
       title: "Withdrawal",
       date: "Dec 15, 2024, 09:12 AM",
       price: "CHF 110K",
@@ -206,7 +206,7 @@ export default function TransactionHistory() {
     },
     {
       id: 9,
-      icon: "tether-badge",
+      icon: require("@/assets/images/emoticons/tether-badge.png"),
       title: "Exchange (USDT → BTC)",
       date: "Dec 15, 2024, 09:12 AM",
       price: "CHF 320K",
@@ -254,12 +254,7 @@ export default function TransactionHistory() {
       <View style={styles.transactionList}>
         {transactions.map((item) => (
           <View key={item.id} style={styles.transactionItem}>
-            <Image
-              source={{
-                uri: `assets/?unstable_path=.%2Fassets%2Fimages%2Femoticons/${item.icon}.png`,
-              }}
-              style={styles.icon}
-            />
+            <Image source={item.icon} style={styles.icon} />
             <View style={styles.titleAndDate}>
               <Text style={styles.title}>{item.title}</Text>
               <Text style={styles.date}>{item.date}</Text>

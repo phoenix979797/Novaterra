@@ -12,3 +12,6 @@ export { default as Divider } from "./Divider";
 export { default as InvestmentCard } from "./InvestmentCard";
 export { default as InvestmentLinear } from "./InvestmentLinear";
 export { default as DiscoverCard } from "./DiscoverCard";
+export { default as DiscoverCardImage } from "./DiscoverCardImage";
+export { default as GeneralCard } from "./GeneralCard";
+export { default as GeneralCardImage } from "./GeneralCardImage";

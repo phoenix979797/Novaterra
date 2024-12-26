@@ -135,28 +135,28 @@ export default function MyInvestment() {
   const invests = [
     {
       title: "NT1Uno",
-      icon: "nt1",
+      icon: require("@/assets/images/emoticons/nt1.png"),
       locked: true,
       price: 50.12924,
       rol: 16,
     },
     {
       title: "NT2Due",
-      icon: "nt2",
+      icon: require("@/assets/images/emoticons/nt2.png"),
       locked: false,
       price: 50.12924,
       rol: 16,
     },
     {
       title: "NT3Tre",
-      icon: "nt3",
+      icon: require("@/assets/images/emoticons/nt3.png"),
       locked: false,
       price: 50.12924,
       rol: 16,
     },
     {
       title: "NT4Quattro",
-      icon: "nt4",
+      icon: require("@/assets/images/emoticons/nt4.png"),
       locked: true,
       price: 50.12924,
       rol: 16,
@@ -182,20 +182,15 @@ export default function MyInvestment() {
               color={index % 4 === 0 || index % 4 === 3 ? "#3FB541" : "#F5B300"}
             />
             <View style={styles.title}>
-              <Image
-                source={{
-                  uri: `assets/?unstable_path=.%2Fassets%2Fimages%2Femoticons/${item.icon}.png`,
-                }}
-                style={styles.icon}
-              />
+              <Image source={item.icon} style={styles.icon} />
               <View style={styles.titleMain}>
                 <Text style={styles.titleText}>{item.title}</Text>
                 <Image
-                  source={{
-                    uri: `assets/?unstable_path=.%2Fassets%2Fimages%2Femoticons/${
-                      item.locked ? "locked" : "unlocked"
-                    }.png`,
-                  }}
+                  source={
+                    item.locked
+                      ? require("@/assets/images/emoticons/locked.png")
+                      : require("@/assets/images/emoticons/unlocked.png")
+                  }
                   style={styles.lockIcon}
                 />
               </View>
