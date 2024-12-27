@@ -57,17 +57,15 @@ export default function Document(props: any) {
       },
       button: {
         display: "flex",
+        width: "100%",
         height: calculateWidth(width, 40),
-        marginHorizontal: calculateWidth(width, 16),
-        marginVertical: calculateWidth(width, 6),
         justifyContent: "center",
-        alignItems: "center",
         alignContent: "center",
-        gap: calculateWidth(width, 10),
-        flexShrink: 0,
         flexWrap: "wrap",
         borderRadius: 999,
         backgroundColor: "#732CB7",
+        position: "absolute",
+        bottom: calculateWidth(width, 24),
       },
       buttonText: {
         color: "#FFF",
@@ -80,44 +78,33 @@ export default function Document(props: any) {
   }, [width, height]);
 
   return (
-    <View>
-      <ScrollView style={{ height: calculateHeight(height, 621) }}>
+    <View style={{ height: "100%" }}>
+      <ScrollView style={{ marginBottom: calculateWidth(width, 80) }}>
         <View style={styles.list}>
-          <View style={styles.item}>
-            <PDFIcon
-              width={calculateWidth(width, 40)}
-              height={calculateWidth(width, 40)}
-            />
-            <View style={styles.main}>
-              <Text style={styles.title} numberOfLines={1}>
-                Plaquette Annuelle 2023 - Euro Concept Promotion
-              </Text>
-              <Text style={styles.date} numberOfLines={1}>
-                November 29, 2024
-              </Text>
+          {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((item) => (
+            <View style={styles.item} key={item}>
+              <PDFIcon
+                width={calculateWidth(width, 40)}
+                height={calculateWidth(width, 40)}
+              />
+              <View style={styles.main}>
+                <Text style={styles.title} numberOfLines={1}>
+                  Plaquette Annuelle 2023 - Euro Concept Promotion
+                </Text>
+                <Text style={styles.date} numberOfLines={1}>
+                  November 29, 2024
+                </Text>
+              </View>
+              <Feather name="download" size={24} color="white" />
             </View>
-            <Feather name="download" size={24} color="white" />
-          </View>
-          <View style={styles.item}>
-            <PDFIcon
-              width={calculateWidth(width, 40)}
-              height={calculateWidth(width, 40)}
-            />
-            <View style={styles.main}>
-              <Text style={styles.title} numberOfLines={1}>
-                KBIS Euro Concept Promotion
-              </Text>
-              <Text style={styles.date} numberOfLines={1}>
-                November 29, 2024
-              </Text>
-            </View>
-            <Feather name="download" size={24} color="white" />
-          </View>
+          ))}
         </View>
       </ScrollView>
-      <TouchableOpacity style={styles.button}>
-        <Text style={styles.buttonText}>Invest</Text>
-      </TouchableOpacity>
+      <View style={{ marginHorizontal: calculateWidth(width, 16) }}>
+        <TouchableOpacity style={styles.button}>
+          <Text style={styles.buttonText}>Invest</Text>
+        </TouchableOpacity>
+      </View>
     </View>
   );
 }

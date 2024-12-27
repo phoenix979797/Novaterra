@@ -5,6 +5,7 @@ import {
   StyleSheet,
   useWindowDimensions,
   TouchableOpacity,
+  ScrollView,
 } from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { calculateWidth } from "../../utils";
@@ -135,7 +136,7 @@ export default function FinancialStatement(props: any) {
         flexWrap: "wrap",
         borderRadius: 999,
         backgroundColor: "#732CB7",
-        marginTop: calculateWidth(width, 33),
+        marginTop: calculateWidth(width, 23),
       },
       buttonText: {
         color: "#FFF",
@@ -148,7 +149,7 @@ export default function FinancialStatement(props: any) {
   }, [width, height]);
 
   return (
-    <View>
+    <ScrollView>
       <View style={styles.section}>
         <Text style={styles.title}>Operation Summary</Text>
         <View style={styles.table}>
@@ -163,25 +164,27 @@ export default function FinancialStatement(props: any) {
               color="white"
             />
           </View>
-          <View style={styles.row}>
-            <Text style={styles.items} numberOfLines={1}>
-              Revenue
-            </Text>
-            <Text style={styles.amounts} numberOfLines={1}>
-              2,700,581
-            </Text>
-            <Text style={styles.vat} numberOfLines={1}>
-              540,116
-            </Text>
-            <Text style={styles.total} numberOfLines={1}>
-              3,240,698
-            </Text>
-            <MaterialCommunityIcons
-              name="dots-vertical"
-              size={17}
-              color="white"
-            />
-          </View>
+          {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((item) => (
+            <View style={styles.row} key={item}>
+              <Text style={styles.items} numberOfLines={1}>
+                Revenue
+              </Text>
+              <Text style={styles.amounts} numberOfLines={1}>
+                2,700,581
+              </Text>
+              <Text style={styles.vat} numberOfLines={1}>
+                540,116
+              </Text>
+              <Text style={styles.total} numberOfLines={1}>
+                3,240,698
+              </Text>
+              <MaterialCommunityIcons
+                name="dots-vertical"
+                size={17}
+                color="white"
+              />
+            </View>
+          ))}
         </View>
       </View>
       <View style={styles.section}>
@@ -224,6 +227,6 @@ export default function FinancialStatement(props: any) {
           </View>
         </TouchableOpacity>
       </View>
-    </View>
+    </ScrollView>
   );
 }

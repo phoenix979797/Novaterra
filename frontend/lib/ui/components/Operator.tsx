@@ -31,6 +31,7 @@ export default function Operator(props: any) {
       },
       image: {
         height: calculateWidth(width, 138),
+        width: "100%",
         borderRadius: calculateWidth(width, 16),
       },
       description: {

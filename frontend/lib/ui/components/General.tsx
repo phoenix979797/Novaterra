@@ -46,6 +46,7 @@ export default function General(props: any) {
       discoverCard: {
         marginHorizontal: calculateWidth(width, 16.5),
         marginTop: calculateWidth(width, 10),
+        marginBottom: calculateWidth(width, 24),
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
@@ -181,7 +182,7 @@ export default function General(props: any) {
         flexWrap: "wrap",
         borderRadius: 999,
         backgroundColor: "#732CB7",
-        marginTop: calculateWidth(width, 33),
+        marginTop: calculateWidth(width, 23),
       },
       buttonText: {
         color: "#FFF",

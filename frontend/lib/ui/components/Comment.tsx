@@ -7,7 +7,9 @@ import {
   Image,
   TouchableOpacity,
   ScrollView,
+  TextInput,
 } from "react-native";
+import { MaterialIcons } from "@expo/vector-icons";
 import { calculateHeight, calculateWidth } from "../../utils";
 
 export default function Comment(props: any) {
@@ -76,33 +78,54 @@ export default function Comment(props: any) {
         fontWeight: 400,
         lineHeight: calculateWidth(width, 24),
       },
+      input: {
+        display: "flex",
+        flexDirection: "row",
+        width: "100%",
+        paddingHorizontal: calculateWidth(width, 16),
+        alignItems: "center",
+        gap: calculateWidth(width, 12),
+        position: "absolute",
+        bottom: calculateWidth(width, 24),
+        justifyContent: "space-between",
+      },
+      inputContainer: {
+        display: "flex",
+        flex: 1,
+        paddingHorizontal: calculateWidth(width, 16),
+        paddingVertical: calculateWidth(width, 12),
+        alignItems: "flex-end",
+        flexDirection: "row",
+        gap: calculateWidth(width, 4),
+        borderRadius: calculateWidth(width, 999),
+        backgroundColor: "rgba(255, 255, 255, 0.10)",
+      },
+      inputField: {
+        color: "#FFF",
+        flex: 1,
+        fontSize: calculateWidth(width, 16),
+        fontStyle: "normal",
+        fontWeight: 400,
+        lineHeight: calculateWidth(width, 24),
+      },
       button: {
         display: "flex",
-        height: calculateWidth(width, 40),
-        marginHorizontal: calculateWidth(width, 16),
-        marginVertical: calculateWidth(width, 6),
+        width: calculateWidth(width, 48),
+        height: calculateWidth(width, 48),
+        paddingHorizontal: calculateWidth(width, 16),
+        paddingVertical: calculateWidth(width, 12),
         justifyContent: "center",
-        alignItems: "center",
         alignContent: "center",
-        gap: calculateWidth(width, 10),
-        flexShrink: 0,
         flexWrap: "wrap",
         borderRadius: 999,
         backgroundColor: "#732CB7",
-      },
-      buttonText: {
-        color: "#FFF",
-        fontSize: calculateWidth(width, 16),
-        fontStyle: "normal",
-        fontWeight: 500,
-        lineHeight: calculateWidth(width, 24),
       },
     });
   }, [width, height]);
 
   return (
-    <View>
-      <ScrollView style={{ height: calculateHeight(height, 621) }}>
+    <View style={{ height: "100%" }}>
+      <ScrollView style={{ marginBottom: calculateWidth(width, 90) }}>
         <View style={styles.chat}>
           <View style={styles.item}>
             <View style={styles.profile}>
@@ -221,9 +244,20 @@ export default function Comment(props: any) {
           </View>
         </View>
       </ScrollView>
-      <TouchableOpacity style={styles.button}>
-        <Text style={styles.buttonText}>Invest</Text>
-      </TouchableOpacity>
+      <View style={styles.input}>
+        <View style={styles.inputContainer}>
+          <TextInput style={styles.inputField} value="Alexander Holmes" />
+          <MaterialIcons name="insert-emoticon" size={24} color="white" />
+          <MaterialIcons name="attachment" size={24} color="white" />
+        </View>
+        <TouchableOpacity style={styles.button}>
+          <MaterialIcons
+            name="send"
+            size={calculateWidth(width, 24)}
+            color="white"
+          />
+        </TouchableOpacity>
+      </View>
     </View>
   );
 }
