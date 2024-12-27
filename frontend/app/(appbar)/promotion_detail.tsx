@@ -1,6 +1,12 @@
 import React from "react";
 import { createMaterialTopTabNavigator } from "@react-navigation/material-top-tabs";
-import { General, Presentation, FinancialStatement, Operator } from "@/lib";
+import {
+  General,
+  Presentation,
+  FinancialStatement,
+  Operator,
+  Document,
+} from "@/lib";
 
 export default function PromotionDetail() {
   const Tab = createMaterialTopTabNavigator();
@@ -33,7 +39,7 @@ export default function PromotionDetail() {
       <Tab.Screen name="Presentation" component={Presentation} />
       <Tab.Screen name="Financial Statement" component={FinancialStatement} />
       <Tab.Screen name="Operator" component={Operator} />
-      <Tab.Screen name="Document" component={General} />
+      <Tab.Screen name="Document" component={Document} />
       <Tab.Screen name="Commet" component={General} />
     </Tab.Navigator>
   );

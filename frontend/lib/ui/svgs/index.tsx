@@ -15,3 +15,4 @@ export { default as DiscoverCard } from "./DiscoverCard";
 export { default as DiscoverCardImage } from "./DiscoverCardImage";
 export { default as GeneralCard } from "./GeneralCard";
 export { default as GeneralCardImage } from "./GeneralCardImage";
+export { default as PDFIcon } from "./PDFIcon";

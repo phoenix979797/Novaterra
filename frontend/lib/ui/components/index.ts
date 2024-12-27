@@ -6,3 +6,4 @@ export { default as General } from "./General";
 export { default as Presentation } from "./Presentation";
 export { default as FinancialStatement } from "./FinancialStatement";
 export { default as Operator } from "./Operator";
+export { default as Document } from "./Document";
