@@ -6,6 +6,7 @@ import {
   useWindowDimensions,
   Image,
   TouchableOpacity,
+  ScrollView,
 } from "react-native";
 import { ProgressBar } from "react-native-paper";
 import { calculateWidth } from "../../utils";
@@ -48,7 +49,6 @@ export default function General(props: any) {
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
-        height: calculateWidth(width, 501),
       },
       title: {
         display: "flex",
@@ -194,7 +194,7 @@ export default function General(props: any) {
   }, [width, height]);
 
   return (
-    <View>
+    <ScrollView>
       <View style={styles.image}>
         <GeneralCardImage
           href={require("@/assets/images/company.png")}
@@ -265,6 +265,6 @@ export default function General(props: any) {
           </View>
         </TouchableOpacity>
       </View>
-    </View>
+    </ScrollView>
   );
 }

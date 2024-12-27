@@ -2,13 +2,8 @@ import React, { useMemo } from "react";
 import { getHeaderTitle } from "@react-navigation/elements";
 import { NativeStackHeaderProps } from "@react-navigation/native-stack";
 import { Appbar, AppbarProps } from "react-native-paper";
-import {
-  StyleSheet,
-  TouchableOpacity,
-  View,
-  useWindowDimensions,
-} from "react-native";
-import { calculateHeight, calculateWidth } from "../../utils";
+import { StyleSheet, useWindowDimensions } from "react-native";
+import { calculateWidth } from "../../utils";
 
 interface MyAppBarProps extends AppbarProps {
   navProps: NativeStackHeaderProps;

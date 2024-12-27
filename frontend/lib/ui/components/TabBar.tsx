@@ -1,5 +1,4 @@
 import React, { useMemo } from "react";
-import { Image } from "expo-image";
 import {
   StyleSheet,
   TouchableOpacity,

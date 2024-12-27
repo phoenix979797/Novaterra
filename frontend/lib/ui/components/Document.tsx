@@ -4,11 +4,10 @@ import {
   Text,
   StyleSheet,
   useWindowDimensions,
-  Image,
   TouchableOpacity,
   ScrollView,
 } from "react-native";
-import { calculateWidth } from "../../utils";
+import { calculateWidth, calculateHeight } from "../../utils";
 import { PDFIcon } from "../svgs";
 import Feather from "@expo/vector-icons/Feather";
 
@@ -56,43 +55,69 @@ export default function Document(props: any) {
         fontWeight: 400,
         lineHeight: calculateWidth(width, 18),
       },
+      button: {
+        display: "flex",
+        height: calculateWidth(width, 40),
+        marginHorizontal: calculateWidth(width, 16),
+        marginVertical: calculateWidth(width, 6),
+        justifyContent: "center",
+        alignItems: "center",
+        alignContent: "center",
+        gap: calculateWidth(width, 10),
+        flexShrink: 0,
+        flexWrap: "wrap",
+        borderRadius: 999,
+        backgroundColor: "#732CB7",
+      },
+      buttonText: {
+        color: "#FFF",
+        fontSize: calculateWidth(width, 16),
+        fontStyle: "normal",
+        fontWeight: 500,
+        lineHeight: calculateWidth(width, 24),
+      },
     });
   }, [width, height]);
 
   return (
-    <ScrollView>
-      <View style={styles.list}>
-        <View style={styles.item}>
-          <PDFIcon
-            width={calculateWidth(width, 40)}
-            height={calculateWidth(width, 40)}
-          />
-          <View style={styles.main}>
-            <Text style={styles.title} numberOfLines={1}>
-              Plaquette Annuelle 2023 - Euro Concept Promotion
-            </Text>
-            <Text style={styles.date} numberOfLines={1}>
-              November 29, 2024
-            </Text>
+    <View>
+      <ScrollView style={{ height: calculateHeight(height, 621) }}>
+        <View style={styles.list}>
+          <View style={styles.item}>
+            <PDFIcon
+              width={calculateWidth(width, 40)}
+              height={calculateWidth(width, 40)}
+            />
+            <View style={styles.main}>
+              <Text style={styles.title} numberOfLines={1}>
+                Plaquette Annuelle 2023 - Euro Concept Promotion
+              </Text>
+              <Text style={styles.date} numberOfLines={1}>
+                November 29, 2024
+              </Text>
+            </View>
+            <Feather name="download" size={24} color="white" />
           </View>
-          <Feather name="download" size={24} color="white" />
-        </View>
-        <View style={styles.item}>
-          <PDFIcon
-            width={calculateWidth(width, 40)}
-            height={calculateWidth(width, 40)}
-          />
-          <View style={styles.main}>
-            <Text style={styles.title} numberOfLines={1}>
-              KBIS Euro Concept Promotion
-            </Text>
-            <Text style={styles.date} numberOfLines={1}>
-              November 29, 2024
-            </Text>
+          <View style={styles.item}>
+            <PDFIcon
+              width={calculateWidth(width, 40)}
+              height={calculateWidth(width, 40)}
+            />
+            <View style={styles.main}>
+              <Text style={styles.title} numberOfLines={1}>
+                KBIS Euro Concept Promotion
+              </Text>
+              <Text style={styles.date} numberOfLines={1}>
+                November 29, 2024
+              </Text>
+            </View>
+            <Feather name="download" size={24} color="white" />
           </View>
-          <Feather name="download" size={24} color="white" />
         </View>
-      </View>
-    </ScrollView>
+      </ScrollView>
+      <TouchableOpacity style={styles.button}>
+        <Text style={styles.buttonText}>Invest</Text>
+      </TouchableOpacity>
+    </View>
   );
 }

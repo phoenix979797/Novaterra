@@ -4,13 +4,10 @@ import {
   Text,
   StyleSheet,
   useWindowDimensions,
-  Image,
   TouchableOpacity,
 } from "react-native";
-import { ProgressBar } from "react-native-paper";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { calculateWidth } from "../../utils";
-import { GeneralCard, GeneralCardImage } from "../svgs";
 
 export default function FinancialStatement(props: any) {
   const { width, height } = useWindowDimensions();

@@ -6,6 +6,7 @@ import {
   FinancialStatement,
   Operator,
   Document,
+  Comment,
 } from "@/lib";
 
 export default function PromotionDetail() {
@@ -40,7 +41,7 @@ export default function PromotionDetail() {
       <Tab.Screen name="Financial Statement" component={FinancialStatement} />
       <Tab.Screen name="Operator" component={Operator} />
       <Tab.Screen name="Document" component={Document} />
-      <Tab.Screen name="Commet" component={General} />
+      <Tab.Screen name="Comment" component={Comment} />
     </Tab.Navigator>
   );
 }
