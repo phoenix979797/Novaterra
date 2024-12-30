@@ -1,13 +1,18 @@
 import { NestFactory } from '@nestjs/core';
-import { AppModule } from './app.module';
 import { ValidationPipe } from '@nestjs/common';
+import { NestExpressApplication } from '@nestjs/platform-express';
 import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
+import { WsAdapter } from '@nestjs/platform-ws';
+import helmet from 'helmet';
+import { AppModule } from './app.module';
 
 async function bootstrap() {
-  const app = await NestFactory.create(AppModule);
+  const app = await NestFactory.create<NestExpressApplication>(AppModule);
 
   // Enable CORS
   app.enableCors();
+
+  app.use(helmet());
 
   // Global validation pipe
   app.useGlobalPipes(
@@ -17,6 +22,9 @@ async function bootstrap() {
       forbidNonWhitelisted: true,
     }),
   );
+
+  app.useWebSocketAdapter(new WsAdapter(app));
+  app.setGlobalPrefix('api');
 
   // Swagger configuration
   const config = new DocumentBuilder()
@@ -28,6 +36,6 @@ async function bootstrap() {
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('api', app, document);
 
-  await app.listen(3000);
+  await app.listen(process.env.PORT || 5000);
 }
 bootstrap();

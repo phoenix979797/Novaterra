@@ -1,12 +1,12 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { AuthModule } from './auth/auth.module';
-import { InvestorsModule } from './investors/investors.module';
-import { CompaniesModule } from './companies/companies.module';
-import { TokensModule } from './tokens/tokens.module';
-import { PromotionsModule } from './promotions/promotions.module';
-import { DividendsModule } from './dividends/dividends.module';
+import { AuthModule } from './modules/auth/auth.module';
+import { InvestorsModule } from './modules/investors/investors.module';
+import { CompaniesModule } from './modules/companies/companies.module';
+import { TokensModule } from './modules/tokens/tokens.module';
+import { PromotionsModule } from './modules/promotions/promotions.module';
+import { DividendsModule } from './modules/dividends/dividends.module';
 
 @Module({
   imports: [
