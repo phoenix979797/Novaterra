@@ -2,7 +2,12 @@ import Svg, { Defs, LinearGradient, Line, Stop } from "react-native-svg";
 
 export default function SvgComponent(props: any) {
   return (
-    <Svg viewBox="0 0 375 1" fill="none" {...props}>
+    <Svg
+      viewBox="0 0 375 1"
+      fill="none"
+      preserveAspectRatio="xMinYMin slice"
+      {...props}
+    >
       <Line y1="0.5" x2="375" y2="0.5" stroke="url(#paint0_linear_2092_866)" />
       <Defs>
         <LinearGradient
