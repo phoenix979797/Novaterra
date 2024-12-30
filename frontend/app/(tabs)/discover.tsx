@@ -20,7 +20,7 @@ export default function Discover() {
         marginBottom: 110,
       },
       filter: {
-        marginTop: calculateWidth(width, 100),
+        marginTop: calculateWidth(width, 90),
         display: "flex",
         paddingHorizontal: calculateWidth(width, 16),
         paddingVertical: calculateWidth(width, 12),
@@ -155,7 +155,6 @@ export default function Discover() {
       amount: {
         display: "flex",
         flexDirection: "column",
-        alignItems: "center",
         gap: calculateWidth(width, 4),
         paddingHorizontal: calculateWidth(width, 16),
         paddingTop: calculateWidth(width, 10),
@@ -170,6 +169,7 @@ export default function Discover() {
         fontStyle: "normal",
         fontWeight: 500,
         lineHeight: calculateWidth(width, 24),
+        textAlign: "center",
       },
       amountSubValue: {
         color: "rgba(255, 255, 255, 0.50)",

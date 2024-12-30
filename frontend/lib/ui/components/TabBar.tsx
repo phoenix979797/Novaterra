@@ -1,12 +1,13 @@
 import React, { useMemo } from "react";
 import {
+  Image,
   StyleSheet,
   TouchableOpacity,
   View,
   useWindowDimensions,
 } from "react-native";
 import { calculateHeight, calculateWidth } from "../../utils";
-import { HomeIconColor, HomeIconGray, Logo } from "../svgs";
+import { Logo } from "../svgs";
 import { Feather } from "@expo/vector-icons";
 
 export default function TabBar(props: any) {
@@ -28,7 +29,7 @@ export default function TabBar(props: any) {
         position: "absolute",
         width: "100%",
         height: calculateWidth(width, 70),
-        top: calculateWidth(width, 44),
+        top: calculateWidth(width, 24),
         paddingHorizontal: calculateWidth(width, 16),
         paddingVertical: calculateWidth(width, 12),
       },
@@ -75,10 +76,6 @@ export default function TabBar(props: any) {
         gap: calculateWidth(width, 10),
         flexShrink: 0,
       },
-      tabbarHomeIcon: {
-        width: calculateWidth(width, 39),
-        height: calculateWidth(width, 39),
-      },
       tabbarButton: {
         display: "flex",
         width: calculateWidth(width, 59),
@@ -116,15 +113,14 @@ export default function TabBar(props: any) {
       onPress={() => props.navProps.navigation.replace("index")}
       key="index"
     >
-      {props.navProps.route.name === "index" ? (
-        <View style={styles.tabbarHomeIcon}>
-          <HomeIconColor />
-        </View>
-      ) : (
-        <View style={styles.tabbarHomeIcon}>
-          <HomeIconGray />
-        </View>
-      )}
+      <Image
+        source={require("@/assets/images/home.png")}
+        style={{
+          width: 35,
+          height: 38,
+          opacity: props.navProps.route.name === "index" ? 1 : 0.5,
+        }}
+      />
     </TouchableOpacity>,
     <TouchableOpacity
       style={styles.tabbarButton}
@@ -141,11 +137,10 @@ export default function TabBar(props: any) {
 
   return (
     <View style={styles.layout}>
-      {/* <Image
+      <Image
         source={require("@/assets/images/tabbar.png")}
         style={styles.tabbarBackground}
-        contentFit="fill"
-      /> */}
+      />
       <View style={styles.header}>
         <View style={styles.menuDots}>
           <View style={styles.dot} />

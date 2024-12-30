@@ -61,6 +61,7 @@ export default function Document(props: any) {
         height: calculateWidth(width, 40),
         justifyContent: "center",
         alignContent: "center",
+        textAlign: "center",
         flexWrap: "wrap",
         borderRadius: 999,
         backgroundColor: "#732CB7",
@@ -73,6 +74,8 @@ export default function Document(props: any) {
         fontStyle: "normal",
         fontWeight: 500,
         lineHeight: calculateWidth(width, 24),
+        width: "100%",
+        textAlign: "center",
       },
     });
   }, [width, height]);

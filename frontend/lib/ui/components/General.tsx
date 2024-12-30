@@ -10,17 +10,19 @@ import {
 } from "react-native";
 import { ProgressBar } from "react-native-paper";
 import { calculateWidth } from "../../utils";
-import { GeneralCard, GeneralCardImage } from "../svgs";
+import { GeneralMainImage, GeneralSubImage } from "../svgs";
 
 export default function General(props: any) {
   const { width, height } = useWindowDimensions();
   const styles = useMemo(() => {
     return StyleSheet.create({
       image: {
-        marginHorizontal: calculateWidth(width, 30),
+        marginHorizontal: calculateWidth(width, -30),
         marginTop: calculateWidth(width, 10),
+        display: "flex",
         alignItems: "center",
         justifyContent: "center",
+        height: calculateWidth(width, 300),
       },
       mainImage: {
         margin: calculateWidth(width, 5.6),
@@ -28,7 +30,6 @@ export default function General(props: any) {
       },
       mainBack: {
         position: "absolute",
-        zIndex: -1,
       },
       secondaryImages: {
         display: "flex",
@@ -145,7 +146,6 @@ export default function General(props: any) {
       amount: {
         display: "flex",
         flexDirection: "column",
-        alignItems: "center",
         gap: calculateWidth(width, 4),
         paddingHorizontal: calculateWidth(width, 16),
         paddingTop: calculateWidth(width, 10),
@@ -160,6 +160,7 @@ export default function General(props: any) {
         fontStyle: "normal",
         fontWeight: 500,
         lineHeight: calculateWidth(width, 24),
+        textAlign: "center",
       },
       amountSubValue: {
         color: "rgba(255, 255, 255, 0.50)",
@@ -197,17 +198,16 @@ export default function General(props: any) {
   return (
     <ScrollView>
       <View style={styles.image}>
-        <GeneralCardImage
+        <GeneralMainImage
           href={require("@/assets/images/company.png")}
           style={styles.mainImage}
         />
-        <GeneralCard style={styles.mainBack} />
         <View style={styles.secondaryImages}>
-          <GeneralCardImage
+          <GeneralSubImage
             href={require("@/assets/images/company1.png")}
             style={styles.secondaryImage}
           />
-          <GeneralCardImage
+          <GeneralSubImage
             href={require("@/assets/images/company2.png")}
             style={styles.secondaryImage}
           />

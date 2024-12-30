@@ -20,7 +20,7 @@ export default function Profile() {
         marginBottom: 110,
       },
       header: {
-        marginTop: calculateWidth(width, 44),
+        marginTop: calculateWidth(width, 34),
         paddingHorizontal: calculateWidth(width, 16),
         paddingVertical: calculateWidth(width, 12),
         display: "flex",

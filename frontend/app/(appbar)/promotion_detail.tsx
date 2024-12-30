@@ -29,6 +29,7 @@ export default function PromotionDetail() {
           marginBottom: 20,
           borderBottomColor: "rgba(255, 255, 255, 0.20)",
           borderBottomWidth: 1,
+          shadowColor: "transparent",
         },
         tabBarIndicatorStyle: {
           backgroundColor: "white",

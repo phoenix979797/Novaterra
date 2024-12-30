@@ -105,7 +105,7 @@ export default function Operator(props: any) {
       revenue: {
         paddingVertical: calculateWidth(width, 8),
         paddingHorizontal: calculateWidth(width, 2),
-        width: calculateWidth(width, 97),
+        width: calculateWidth(width, 100),
         color: "rgba(255, 255, 255, 0.70)",
         fontSize: calculateWidth(width, 12),
         fontStyle: "normal",

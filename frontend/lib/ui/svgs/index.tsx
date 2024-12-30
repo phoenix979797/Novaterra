@@ -1,7 +1,5 @@
 export { default as FriendCard } from "./FriendCard";
 export { default as FriendIcon } from "./FriendIcon";
-export { default as HomeIconColor } from "./HomeIconColor";
-export { default as HomeIconGray } from "./HomeIconGray";
 export { default as Linear } from "./Linear";
 export { default as Logo } from "./Logo";
 export { default as MarketCard } from "./MarketCard";
@@ -13,7 +11,7 @@ export { default as InvestmentCard } from "./InvestmentCard";
 export { default as InvestmentLinear } from "./InvestmentLinear";
 export { default as DiscoverCard } from "./DiscoverCard";
 export { default as DiscoverCardImage } from "./DiscoverCardImage";
-export { default as GeneralCard } from "./GeneralCard";
-export { default as GeneralCardImage } from "./GeneralCardImage";
+export { default as GeneralMainImage } from "./GeneralMainImage";
+export { default as GeneralSubImage } from "./GeneralSubImage";
 export { default as PDFIcon } from "./PDFIcon";
 export { default as PresentationCard } from "./PresentationCard";

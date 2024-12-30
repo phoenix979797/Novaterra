@@ -52,7 +52,8 @@ export default function Presentation(props: any) {
         height: calculateWidth(width, 303),
       },
       cardBack: {
-        width: calculateWidth(width, 157),
+        width: calculateWidth(width, 160),
+        height: calculateWidth(width, 305),
         flexShrink: 0,
         position: "absolute",
       },

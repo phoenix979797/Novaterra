@@ -31,7 +31,7 @@ export default function Dashboard() {
         justifyContent: "center",
         alignItems: "center",
         gap: calculateWidth(width, 4),
-        marginTop: calculateWidth(width, 79),
+        marginTop: calculateWidth(width, 69),
         paddingHorizontal: calculateWidth(width, 16),
         marginBottom: calculateWidth(width, 26.25),
       },
